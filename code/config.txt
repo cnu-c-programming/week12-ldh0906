@@ -1,0 +1,4 @@
+InputFileName=main.exe
+Options=200 
+SectionName=krb
+Address=0x3312

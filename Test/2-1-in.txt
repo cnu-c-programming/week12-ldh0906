@@ -1,0 +1,4 @@
+kim 20 
+lee 30
+park 40
+quit
