@@ -20,7 +20,7 @@ int main(int argc, const char* argv[]) {
                 break;
 
             if (ch[i] < '0' || ch[i] > '9') {
-                printf("invalid input %s\n", ch);
+                fprintf("invalid input %s\n", ch);
                 isdigit = 0;
                 break;
             }
