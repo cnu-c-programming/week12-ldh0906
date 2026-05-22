@@ -10,7 +10,23 @@ typedef struct config {
 } Config;
 
 void config_parser(Config* config_ptr) {
-
+    FILE* fp = fopen("config.txt", "r");
+    char key[32];
+    char value[64];
+    char line[96];
+    while(fgets(line, sizeof line, fp)) {
+        if(sscanf(line, "%[^=]=%s", key, value) == 2) {
+            if(strcmp(key,"InputFileName") == 0) {
+               strcpy(config_ptr->InputFileName, value);
+            } else if (strcmp(key,"Options") == 0) {
+                config_ptr -> Options = atoi(value);
+            } else if (strcmp(key,"SectionName") == 0) {
+                strcpy(config_ptr->SectionName, value);
+            } else if (strcmp(key,"Address") == 0) {
+                config_ptr->Address = atoi(value); 
+            }
+        }
+    }
 }
 
 int main(int argc, const char* argv[]) {
