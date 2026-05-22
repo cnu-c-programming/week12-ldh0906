@@ -22,12 +22,11 @@ int main(int argc, const char* argv[]) {
     float avg = 0;
 
     int result = 0;
-    int i = 0;
-    for(i = 0; i < count; i++) {
+    for(int i = 0; i < count; i++) {
         result += students[i].score;
         if(students[i].score > max) max = students[i].score;
     }
-    avg = result/i;
+    avg = result/(count - 1);
 
     printf("max: %d\n", max);
     printf("avg: %.2f\n", avg);
