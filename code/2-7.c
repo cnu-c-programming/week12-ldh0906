@@ -23,7 +23,7 @@ void config_parser(Config* config_ptr) {
             } else if (strcmp(key,"SectionName") == 0) {
                 strcpy(config_ptr->SectionName, value);
             } else if (strcmp(key,"Address") == 0) {
-                config_ptr->Address = atoi(value); 
+                config_ptr->Address = strtol(value, NULL, 16); 
             }
         }
     }
