@@ -15,12 +15,14 @@ int main(int argc, const char* argv[]) {
         int isdigit = 1;
         int num = 0;
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 4; i++) {
             if (ch[i] == '\n')
                 break;
 
             if (ch[i] < '0' || ch[i] > '9') {
-                fprintf("invalid input %s\n", ch);
+                fprintf(stderr, "invalid input ");
+                for (int j = 0; j < 4; j++)
+                    fprintf(stderr, "%c", ch[j]);
                 isdigit = 0;
                 break;
             }
@@ -31,7 +33,7 @@ int main(int argc, const char* argv[]) {
         if (isdigit)
             sum += num;
     }
-    printf("sum: %d\n", sum);
+    printf("\nsum: %d\n", sum);
     fclose(fp);
     return 0;
 }
