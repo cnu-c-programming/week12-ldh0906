@@ -21,7 +21,7 @@ int main(int argc, const char* argv[]) {
 
             if (ch[i] < '0' || ch[i] > '9') {
                 fprintf(stderr, "invalid input ");
-                for (int j = 0; ch[j]; j++)
+                for (int j = 0; ch[j] != '\0'; j++)
                     fprintf(stderr, "%c", ch[j]);
                 isdigit = 0;
                 break;
