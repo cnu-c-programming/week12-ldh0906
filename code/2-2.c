@@ -22,7 +22,7 @@ int main(int argc, const char* argv[]) {
     float avg = 0;
 
     int result = 0;
-    for(int i = 0; i < count; i++) {
+    for(int i = 0; i < count -1; i++) {
         result += students[i].score;
         if(students[i].score > max) max = students[i].score;
     }
